@@ -5,124 +5,77 @@
 	<title>Car Sale</title>
 	<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-	<style type="text/css">
-		body{
-			width:100%;
-			height:100%;
-			background:url("static/images/car_sale.jpg");
-			background-size:cover;
-			background-repeat: no-repeat;
-		}
-		.button-success {
-            background: rgb(66, 184, 221);
-            /* this is a green */
-			font-size: 150%
-			
-        }
-		.text-input-box {
-			border-style: solid;
-			background:url("static/images/box_background.jpg");
-			background-size:cover;
-			background-repeat: no-repeat;
-			border: 2px solid;
-			border-radius: 10px;
-		}
-		.top-head {
-			position: relative;
-			top: 5px;
-			left: 600px;
-			border: 3px solid black;
-			border-style: solid;
-			width: 500px;
-			height: 100px;
-			background: white;
-			animation: mymove 5s infinite;
-			padding-left:50px;
-			border-radius: 7px;
-			padding-top:25px;
-		}
-		@keyframes mymove {
-			from {background-color: white;}
-			to {background-color: blue;}
-		}
-		.contact-head{
-			position: absolute;
-			top: 15px;
-			right: 50px;
-			border: 3px solid black;
-			border-style: solid;
-			width: 300px;
-			height: 150px;
-			background: white;
-			padding-left:50px;
-			border-radius: 7px;
-		}
-	</style>
-	
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
 </head>
-<h1 class="top-head">Car Sale - Trust Us<i class="fa fa-car" style="font-size:50px;padding-left:50px;" ></i></h1>
+
+<header class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <i class="fa fa-car" style="font-size:50px;padding-left:50px;" ></i>
+      <span class="ml-3 text-xl">Car Sale</span>
+    </a>
+  </div>
+</header>
 
 <body>
 	<div>
 		<form class="pure-form pure-form-aligned" method="POST" action="{{ url_for('predict')}}">
-		<div class="contact-head">
-		<h2>Contact Us:</h2>
-		<p>Call @ +911234567890</p>
-		<p>Mail Us: <a href="https://mail.google.com/mail/u/0/#inbox?compose=VpCqJQwTPFZNztXBKfbVtkCdXNbMmnTFDSKskrNjqgzwNFWFgfSkwFfvGDkLCJCCFmHMJsG" target="_blank"><strong>anubhav.pragyesh@gmail.com</strong></a></p>
 		</div>
+			
+		<section class="text-gray-600 body-font">
+  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+    <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">PREDICT YOUR CAR PRICE</h1>
+      <p class="mb-8 leading-relaxed">Enter all your deatil and get your car price</p>
+      <div class="flex w-full md:justify-start justify-center items-end">
+        <div class="relative mr-4 md:w-full lg:w-full xl:w-1/2 w-2/4">
+			<label for="dealer" class="leading-7 text-sm text-gray-600">Are you A Dealer or Individual</label>
+			<select type="dealer" id="dealer" name="Seller_Type_Individual" required="required" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				<option value="Dealer">Dealer</option>
+				<option value="Individual">Individual</option></select>
+			
+			<label for="full-name" class="leading-7 text-sm text-gray-600">Number Of Used Year</label>
+			<input type="text" id="full-name" type="number" name="Year" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+			
+			<label for="email" class="leading-7 text-sm text-gray-600">Kilometers Drived</label>
+			<input type="number" name="Kms_Driven" required="required" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+			
+			<label for="email" class="leading-7 text-sm text-gray-600">Showroom Price (In lakhs)</label>
+			<input type="number" name="Present_Price" required="required" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+			
+			<label for="email" class="leading-7 text-sm text-gray-600">Number of Previously Owner(0 or 1 or 2)?</label>
+			<input type="number" name="Owner" required="required" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+			
+			<label for="fuelType" class="leading-7 text-sm text-gray-600">Fuel type</label>
+			<select type="fuelType" id="fuelType" name="Fuel_Type_Petrol" required="required" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				<option value="Petrol">Petrol</option>
+				<option value="Diesel">Diesel</option>
+				<option value="Diesel">CNG</option>
+			</select>
+			
+			<label for="transmission" class="leading-7 text-sm text-gray-600">Transmission type</label>
+			<select type="transmission" id="transmission" name="Transmission_Mannual" required="required" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				<option value="Mannual">Manual Car</option>
+				<option value="Automatic">Automatic Car</option>        
+			</select>
+        </div>
+    </div>
+	<br>
+	  <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" type="submit">Calculate the Selling Price</button>
+	  <br><h3>{{ prediction_text }}<h3>
+      <div class="flex lg:flex-row md:flex-col">
+      </div>
+    </div>
 	
-			<div style="padding-left:50px;padding-top:50px">
-			<table class="text-input-box" style="padding-left:50px;padding-right:50px;padding-top:25px;padding-bottom:25px">
-				<tr>
-					<td><h3>Number Of Used Year</h3></td>
-					<td><input type="number" name="Year"><br></td>
-				</tr>
-				<tr>
-					<td><h3>Showroom Price (In lakhs)</h3></td>
-					<td><input id="second" name="Present_Price" required="required"></td>
-				</tr>
-				<tr>
-					<td><h3>Kilometers Drived</h3></td>
-					<td><input id="third" name="Kms_Driven" required="required"></td>
-				</tr>
-				<tr>
-					<td><h3>Number of Previously Owner(0 or 1 or 3)?</h3></td>
-					<td><input id="fourth" name="Owner" required="required"></td>
-				</tr>
-				<tr>
-					<td><h3>Fuel type</h3></td>
-					<td><select name="Fuel_Type_Petrol" id="fuel" required="required">
-					<option value="Petrol">Petrol</option>
-					<option value="Diesel">Diesel</option>
-					<option value="Diesel">CNG</option>
-					</select></td>
-				</tr>
-				<tr>
-					<td><h3>Are you A Dealer or Individual</h3></td>
-					<td><select name="Seller_Type_Individual" required="required">
-					<option value="Dealer">Dealer</option>
-					<option value="Individual">Individual</option>
-					</select></td>
-				</tr>
-				<tr>
-					<td><h3>Transmission type</h3></td>
-					<td><select name="Transmission_Mannual" id="research" required="required">
-					<option value="Mannual">Manual Car</option>
-					<option value="Automatic">Automatic Car</option>
-					</select></td>
-				</tr> 
-				<tr>
-					<td>
-						<div style="padding-left:200px">
-						<br><br><button class="button-success" type="submit" color:"green">Calculate the Selling Price</button>
-						</div>
-					</td>
-				</tr>
-			</table>
-			</div>
-        </form>
-        <br><br><h3>{{ prediction_text }}<h3>
+    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+      <img class="object-cover object-center rounded" alt="hero" src="https://source.unsplash.com/720x600/?car">
+    </div>
+  </div>
+</section>
+</form>
+
     
-	</div>
+</div>
 	
 </body>

@@ -49,6 +49,10 @@ def predict():
     else:
         return render_template('index.html')
 
+@app.route("/contact" )
+def contact():
+    return render_template('contactUs.html')
+    
 if __name__=="__main__":
     app.run(debug=True)
 
