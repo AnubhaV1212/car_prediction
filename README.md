@@ -12,6 +12,7 @@ Another reason, I start thinking of become Data Science as I notice my interest 
 There are two technical aspect
 First, after getting data I have prepare the model using RandomForestRegressor algorithm.
 Second, after developing model. I have deployed my application on Heroku app <https://car-selling-trust-us.herokuapp.com/>
+![image](https://user-images.githubusercontent.com/68047740/112836641-7a968880-90b8-11eb-9f84-27afe7bfa3d2.png)
 
 ## Installation
 The Code is written in Python 3.7. If you don't have Python installed you can find it here. If you are using a lower version of Python you can upgrade using the pip package, ensuring you have the latest version of pip. To install the required packages and libraries, run this command in the project directory after cloning the repository:
@@ -27,8 +28,3 @@ If there will be some suggestion or new features or modifing existing one you ca
 
 ## Data Source 
 I would like to thanks Kaggle for providing the data and you can find data in this repo
-
-![image](https://user-images.githubusercontent.com/68047740/112836641-7a968880-90b8-11eb-9f84-27afe7bfa3d2.png)
- Website Screenshot
-
-
